@@ -15,7 +15,6 @@
   position: relative;
   overflow: hidden;
 }
-
 .container::before {
   content: '';
   position: absolute;
@@ -26,7 +25,6 @@
   background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
   z-index: 0;
 }
-
 .card {
   display: flex;
   width: 100%;
