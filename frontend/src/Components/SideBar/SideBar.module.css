@@ -1,0 +1,70 @@
+/* SideBar Styles - Scoped to only affect this component */
+.sideBarContainerNav {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f8fafc;
+}
+
+.sideBarNavbarWrapper {
+  flex-shrink: 0;
+}
+
+.sideBarNav {
+  width: 240px;
+  height: calc(100vh - 80px); /* Adjust based on navbar height */
+  background-color: white;
+  border-right: 1px solid #e2e8f0;
+  padding: 1.5rem 0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+  position: fixed;
+  top: 80px; /* Match navbar height */
+  left: 0;
+  z-index: 10;
+}
+
+.sideBarNavItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 1rem;
+}
+
+.sideBarNavItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.sideBarNavItem:hover {
+  background-color: #f1f5f9;
+  color: #143D60;
+  transform: translateX(4px);
+}
+
+.sideBarNavItemActive {
+  background-color: #E8F0F7;
+  color: #143D60;
+  font-weight: 600;
+}
+
+.sideBarNavItemActive .sideBarNavIcon {
+  color: #143D60;
+}
+
+.sideBarNavIcon {
+  color: #718096;
+  transition: all 0.2s ease;
+
+.sideBarNavItem:hover .sideBarNavIcon {
+  color: #143D60;
+}
+
+}
