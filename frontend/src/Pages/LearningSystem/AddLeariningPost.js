@@ -137,7 +137,7 @@ function AddLeariningPost() {
                   {errors.contentURL}
                 </div>
               )}
-              <small className="learning-input-help">YouTube links will be embedded automatically</small>
+              <small className="learning-input-help">Links of YouTube will be embedded automatically</small>
             </div>
 
             <div className="learning-form-group">
