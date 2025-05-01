@@ -362,7 +362,7 @@ function AllLearningPost() {
                       setNewPost({ ...newPost, description: e.target.value });
                       if (errors.description) setErrors({...errors, description: ''});
                     }}
-                    placeholder="Write your post description"
+                    placeholder="Write description for your post"
                     required
                   />
                   {errors.description && (
