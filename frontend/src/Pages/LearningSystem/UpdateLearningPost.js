@@ -47,11 +47,9 @@ function UpdateLearningPost() {
       }
     }
   };
-
   const handleRemoveTag = (index) => {
     setTags(tags.filter((_, i) => i !== index));
   };
-
   const validateForm = () => {
     const newErrors = {};
     
