@@ -24,6 +24,7 @@ function AddLeariningPost() {
     }
   };
 
+
   const handleRemoveTag = (index) => {
     setTags(tags.filter((_, i) => i !== index));
   };
