@@ -9,7 +9,7 @@
 }
 
 .contentSection {
-  flex: 10;
+  flex: 1;
   padding: 1.5rem 2rem;
   margin-left: 260px; /* side bar width */
   min-height: calc(100vh - 80px); /* full height minus nav bar */
