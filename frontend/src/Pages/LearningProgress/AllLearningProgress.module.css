@@ -1,19 +1,19 @@
 .container {
   display: flex;
-  padding-top: 80px; /* nav bar height */
+  padding-top: 80px; 
 }
 
 .sidebarWrapper {
-  width: 40px; /* side bar width */
+  width: 40px; 
   flex-shrink: 0;
 }
 
 .contentSection {
   flex: 1;
   padding: 1.5rem 2rem;
-  margin-left: 200px; /* side bar width */
+  margin-left: 200px; 
   min-height: calc(100vh - 80px);
-  background-color: #E6ECF5; /* Very light shade */
+  background-color: #E6ECF5; 
   font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
