@@ -87,7 +87,7 @@ function AddLeariningPost() {
         <div className="learning-form">
           <div className="learning-form-header">
             <h2 className="learning-form-title">New Learning Post</h2>
-            <p className="learning-form-subtitle">Share valuable resources with your peers</p>
+            <p className="learning-form-subtitle">Share valuable resources with your friends</p>
           </div>
           
           <form onSubmit={handleSubmit} className="learning-form-content">
@@ -137,7 +137,7 @@ function AddLeariningPost() {
                   {errors.contentURL}
                 </div>
               )}
-              <small className="learning-input-help">YouTube links will be embedded automatically</small>
+              <small className="learning-input-help">Links of YouTube will be embedded automatically</small>
             </div>
 
             <div className="learning-form-group">
