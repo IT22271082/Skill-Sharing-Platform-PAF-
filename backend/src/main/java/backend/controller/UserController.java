@@ -72,7 +72,7 @@ public class UserController {
                 .orElseThrow(() -> new UserNotFoundException(id));
     }
 
-    //update
+    
     @PutMapping("/user/{id}")
     UserModel updateProfile(@RequestBody UserModel newUserModel, @PathVariable String id) {
         return userRepository.findById(id)
@@ -86,7 +86,7 @@ public class UserController {
                 }).orElseThrow(() -> new UserNotFoundException(id));
     }
 
-    //delete
+ 
     @DeleteMapping("/user/{id}")
     String deleteProfile(@PathVariable String id) {
         if (!userRepository.existsById(id)) {
@@ -96,7 +96,7 @@ public class UserController {
         return "user account " + id + " deleted";
     }
 
-    // check email
+   
     @GetMapping("/checkEmail")
     public boolean checkEmailExists(@RequestParam String email) {
         return userRepository.existsByEmail(email);
@@ -109,7 +109,7 @@ public class UserController {
             user.getFollowedUsers().add(followUserID);
             userRepository.save(user);
 
-            // Create a notification for the followed user
+           
             String followerFullName = userRepository.findById(userID)
                     .map(follower -> follower.getFullname())
                     .orElse("Someone");
@@ -135,7 +135,7 @@ public class UserController {
     @GetMapping("/user/{userID}/followedUsers")
     public List<String> getFollowedUsers(@PathVariable String userID) {
         return userRepository.findById(userID)
-                .map(user -> new ArrayList<>(user.getFollowedUsers())) // Convert Set to List
+                .map(user -> new ArrayList<>(user.getFollowedUsers())) 
                 .orElseThrow(() -> new UserNotFoundException("User not found: " + userID));
     }
 }
