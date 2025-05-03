@@ -26,7 +26,7 @@ public class UserController {
     @Autowired
     private NotificationRepository notificationRepository;
 
-    //Insert
+    
     @PostMapping("/user")
     public ResponseEntity<?> newUserModel(@RequestBody UserModel newUserModel) {
         if (userRepository.existsByEmail(newUserModel.getEmail())) {
@@ -39,28 +39,28 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
     }
 
-    //User Login
+    
     @PostMapping("/login")
     public ResponseEntity<Map<String, Object>> login(@RequestBody UserModel loginDetails) {
-        System.out.println("Login attempt for email: " + loginDetails.getEmail()); // Log email for debugging
+        System.out.println("Login attempt for email: " + loginDetails.getEmail()); 
 
         UserModel user = userRepository.findByEmail(loginDetails.getEmail())
                 .orElseThrow(() -> new UserNotFoundException("Email not found: " + loginDetails.getEmail()));
 
         if (user.getPassword().equals(loginDetails.getPassword())) {
-            System.out.println("Login successful for email: " + loginDetails.getEmail()); // Log success
+            System.out.println("Login successful for email: " + loginDetails.getEmail()); 
             Map<String, Object> response = new HashMap<>();
             response.put("message", "Login Successful");
             response.put("id", user.getId());
             response.put("fullName", user.getFullname());
             return ResponseEntity.ok(response);
         } else {
-            System.out.println("Invalid password for email: " + loginDetails.getEmail()); // Log invalid password
+            System.out.println("Invalid password for email: " + loginDetails.getEmail()); 
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("message", "Invalid credentials!"));
         }
     }
 
-    //Display
+    
     @GetMapping("/user")
     List<UserModel> getAllUsers() {
         return userRepository.findAll();
