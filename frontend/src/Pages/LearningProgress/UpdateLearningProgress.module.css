@@ -1,0 +1,109 @@
+.container {
+  display: flex;
+  padding-top: 80px; /* nav bar height */
+}
+
+.sidebarWrapper {
+  width: 40px; /* side bar width */
+  flex-shrink: 0;
+}
+
+.contentSection {
+  flex: 1;
+  padding: 1.5rem 2rem;
+  margin-left: 260px; /* side bar width */
+  min-height: calc(100vh - 80px); /* full height minus nav bar */
+  background-color: #E6ECF5; /* Very light shade */
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.formContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(39, 84, 138, 0.25); /* Transparent primary */
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3B5F94; /* Desaturated shade */
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.formGroup {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #27548A; /* Primary */
+}
+
+.input,
+.textarea,
+.select {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid #6B93C7; /* Highlight shade */
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  outline: none;
+  border-color: #3B5F94; /* Desaturated shade */
+  box-shadow: 0 0 5px #3B5F94; /* Desaturated shade */
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.button {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #4A78B3, #27548A); /* Lighter to primary */
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 3px 6px rgba(39, 84, 138, 0.3); /* Transparent primary */
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #27548A, #4A78B3); /* Primary to lighter */
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding-top: 70px; /* mobile nav bar height */
+  }
+  .sidebarWrapper {
+    width: 100%;
+    position: relative;
+    height: auto;
+  }
+  .contentSection {
+    margin-left: 0;
+    padding: 1rem;
+    min-height: auto;
+  }
+  .formContainer {
+    padding: 1rem;
+  }
+}
