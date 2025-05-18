@@ -261,7 +261,7 @@ function AllLearningPost() {
               {showingMyPosts ? (
                 <>
                   <List size={18} />
-                  <span>All Posts</span>
+                  <span>All Leraning Posts</span>
                 </>
               ) : (
                 <>
