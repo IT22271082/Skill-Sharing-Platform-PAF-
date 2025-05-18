@@ -15,7 +15,6 @@ function AddLeariningPost() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
-
   const handleAddTag = () => {
     if (tagInput.trim() !== '') {
       setTags([...tags, tagInput.trim()]);
@@ -23,7 +22,6 @@ function AddLeariningPost() {
       if (errors.tags) setErrors({...errors, tags: ''});
     }
   };
-
 
   const handleRemoveTag = (index) => {
     setTags(tags.filter((_, i) => i !== index));
@@ -87,7 +85,7 @@ function AddLeariningPost() {
         <div className="learning-form">
           <div className="learning-form-header">
             <h2 className="learning-form-title">New Learning Post</h2>
-            <p className="learning-form-subtitle">Share valuable resources with your friends</p>
+            <p className="learning-form-subtitle">Share valuable resources with your peers</p>
           </div>
           
           <form onSubmit={handleSubmit} className="learning-form-content">
@@ -137,7 +135,7 @@ function AddLeariningPost() {
                   {errors.contentURL}
                 </div>
               )}
-              <small className="learning-input-help">Links of YouTube will be embedded automatically</small>
+              <small className="learning-input-help">YouTube links will be embedded automatically</small>
             </div>
 
             <div className="learning-form-group">

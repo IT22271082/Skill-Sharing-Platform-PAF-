@@ -261,7 +261,7 @@ function AllLearningPost() {
               {showingMyPosts ? (
                 <>
                   <List size={18} />
-                  <span>All Posts</span>
+                  <span>All Leraning Posts</span>
                 </>
               ) : (
                 <>
@@ -362,7 +362,7 @@ function AllLearningPost() {
                       setNewPost({ ...newPost, description: e.target.value });
                       if (errors.description) setErrors({...errors, description: ''});
                     }}
-                    placeholder="Write description for your post"
+                    placeholder="Write your post description"
                     required
                   />
                   {errors.description && (

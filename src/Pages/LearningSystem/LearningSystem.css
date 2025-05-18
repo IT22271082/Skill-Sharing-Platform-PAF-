@@ -24,7 +24,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
-  background: #71a3cf;
+  background: #143d60;
   padding: 20px 24px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(20, 61, 96, 0.15);
@@ -109,7 +109,7 @@
   border-radius: 10px;
   border: none;
   background: white;
-  color: #7f76c6;
+  color: #493D9E;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -248,43 +248,40 @@
 /* Enhanced Form Styles */
 .learning-form-overlay {
   position: fixed;
-  top: 80px; /* Account for navbar height */
-  left: 0;
+  top: 80px; /* This matches your main content margin-top */
+  left: 250px; /* This matches your sidebar width */
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  align-items: flex-start; /* Align to top */
+  align-items: flex-start; /* Changed from center to flex-start */
   justify-content: center;
   z-index: 1000;
-  padding: 2rem 1rem;
-  animation: fadeIn 0.3s ease-out;
-  overflow-y: auto; /* Enable scrolling */
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  padding: 2rem;
 }
 
 .learning-form {
   background: white;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(20, 61, 96, 0.2);
-  max-width: 800px;
-  width: 90%;
-  margin: 20px auto; /* Add top margin */
-  overflow-y: auto; /* Enable scrolling */
-  max-height: calc(100vh - 180px); /* Account for navbar and padding */
-  border: 1px solid rgba(20, 61, 96, 0.1);
-  transform: translateY(0);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  max-height: calc(100vh - 100px); /* Adjusted to account for navbar */
+  overflow-y: auto;
+  position: relative;
+  animation: formFadeIn 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  margin-top: 1rem; /* Add some space below navbar */
 }
 
-.learning-form:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(20, 61, 96, 0.25);
+@keyframes formFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .learning-form-header {
@@ -542,103 +539,6 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .learning-form {
-    width: 95%;
-    border-radius: 12px;
-  }
-  
-  .learning-form-header {
-    padding: 1.5rem;
-  }
-  
-  .learning-form-content {
-    padding: 1.5rem;
-  }
-  
-  .learning-form-actions {
-    flex-direction: column;
-    gap: 12px;
-  }
-  
-  .learning-form-actions .learning-btn {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .learning-tags-input {
-    flex-direction: column;
-  }
-}
-
-/* Floating Action Button */
-.learning-fab {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  background: #493D9E;
-  color: white;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(73, 61, 158, 0.3);
-  transition: all 0.3s ease;
-  z-index: 100;
-}
-
-.learning-fab:hover {
-  background: #5A4DB3;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(73, 61, 158, 0.4);
-}
-
-/* Empty State */
-.learning-empty {
-  text-align: center;
-  padding: 4rem 2rem;
-  background: white;
-  border-radius: 24px;
-  box-shadow: 0 4px 20px rgba(73, 61, 158, 0.08);
-}
-
-.learning-empty-icon {
-  width: 80px;
-  height: 80px;
-  background: rgba(20, 61, 96, 0.1);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-}
-
-.learning-empty-icon svg {
-  color: #143d60;
-  width: 40px;
-  height: 40px;
-}
-
-.learning-empty h3 {
-  color: #1F2937;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.learning-empty p {
-  color: #6B7280;
-  margin-bottom: 2rem;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
   .learning-container main {
     margin-left: 0;
     margin-top: 60px;
@@ -705,6 +605,16 @@
   .learning-author {
     flex-direction: column;
     align-items: center;
+  }
+
+  .learning-form-overlay {
+    top: 60px; /* Adjusted for mobile header height */
+    left: 0;
+    padding: 1rem;
+  }
+  
+  .learning-form {
+    max-height: calc(100vh - 80px);
   }
 }
 
@@ -1280,4 +1190,45 @@
 @keyframes highlightNew {
   0% { box-shadow: 0 0 0 2px #143d60; }
   100% { box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); }
-} 
+}
+
+/* Floating Action Button */
+.learning-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background: #493D9E;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(73, 61, 158, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+}
+
+.learning-fab:hover {
+  transform: scale(1.1);
+  background: #5A4DB3;
+  box-shadow: 0 6px 16px rgba(73, 61, 158, 0.4);
+}
+
+.learning-fab:active {
+  transform: scale(0.95);
+}
+
+/* Add pulsing animation */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(73, 61, 158, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(73, 61, 158, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(73, 61, 158, 0); }
+}
+
+.learning-fab {
+  animation: pulse 2s infinite;
+}
